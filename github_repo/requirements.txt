@@ -1,0 +1,33 @@
+# =====================================================
+# Türkçe Afet Tweet Sınıflandırması — QLoRA Fine-Tuning
+# Python 3.10+ gereklidir
+# =====================================================
+
+# --- Core ML ---
+torch>=2.0.0
+transformers==4.44.2
+peft==0.12.0
+bitsandbytes==0.43.3
+accelerate==0.33.0
+datasets==2.21.0
+trl==0.10.1
+
+# --- Metrics & Evaluation ---
+scikit-learn>=1.3.0
+evaluate>=0.4.0
+
+# --- Data manipulation ---
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0       # Excel okuma/yazma
+
+# --- Visualization ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# --- Notebook (opsiyonel — Colab için gerekli değil) ---
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# --- Türkçe NLP (opsiyonel, ön işleme için) ---
+# zemberek-python  # <- yorum kaldırılınca yüklenir, ileri seviye morfolojik analiz

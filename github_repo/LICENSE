@@ -1,0 +1,24 @@
+Academic Use License
+====================
+
+Copyright (c) 2026 Mustafa Kırpık (Selçuk Üniversitesi)
+
+Bu çalışma, Selçuk Üniversitesi Büyük Dil Modelleri (BDM) dersi kapsamında
+dönem projesi olarak hazırlanmıştır.
+
+İzin verilen kullanımlar:
+  - Akademik araştırma ve eğitim
+  - Kaynak gösterilerek kod alıntılaması
+  - Derste kullanılan veri setleri ile reproducibility çalışmaları
+  - Bilimsel yayında atıf gösterilerek karşılaştırma
+
+İzin verilmeyen kullanımlar:
+  - Ticari amaçlı dağıtım veya satış
+  - Kaynak gösterilmeden eserin kopyalanması
+  - Eğitim verisindeki kişisel verilerin başka amaçlarla kullanımı
+
+Atıf:
+  Kırpık, M. (2026). Türkçe Afet Tweet Sınıflandırması — QLoRA Fine-Tuning
+  Benchmark. Selçuk Üniversitesi BDM Dönem Projesi.
+
+Bu yazılım "olduğu gibi" sağlanır; herhangi bir garanti verilmez.
