@@ -1,4 +1,4 @@
-# Türkçe Afet Tweet Sınıflandırması — QLoRA Fine-Tuning
+# Türkçe Afet Tweet Sınıflandırması — QLoRA Fine-Tuningnn
 
 > **5-sınıflı Türkçe afet tweet sınıflandırması için Küçük Dil Modelleri (SLM) ile QLoRA fine-tuning benchmark çalışması.**
 
@@ -33,13 +33,13 @@
 
 2023 Kahramanmaraş depremleri sırasında Twitter'da paylaşılan tweet'lerin otomatik olarak **5 operasyonel sınıfa** ayrılması:
 
-| ID | Sınıf | Açıklama |
-|:--:|:------|:---------|
-| 0 | `yardim_talebi` | Acil yardım, kurtarma, malzeme talebi |
-| 1 | `kayip_bildirimi` | İletişim kesilen / kayıp kişi aramaları |
-| 2 | `altyapi_hasari` | Yıkık bina, kapalı yol, şebeke kesintisi |
-| 3 | `bagis_koordinasyon` | Bağış, IBAN, gönüllü, lojistik |
-| 4 | `diger_ilgisiz` | Haber, taziye, eleştiri, off-topic |
+| ID  | Sınıf                | Açıklama                                 |
+| :-: | :------------------- | :--------------------------------------- |
+|  0  | `yardim_talebi`      | Acil yardım, kurtarma, malzeme talebi    |
+|  1  | `kayip_bildirimi`    | İletişim kesilen / kayıp kişi aramaları  |
+|  2  | `altyapi_hasari`     | Yıkık bina, kapalı yol, şebeke kesintisi |
+|  3  | `bagis_koordinasyon` | Bağış, IBAN, gönüllü, lojistik           |
+|  4  | `diger_ilgisiz`      | Haber, taziye, eleştiri, off-topic       |
 
 **Motivasyon:** Sosyal medyada dakikalar içinde paylaşılan milyonlarca tweet'in **kısıtlı donanım kaynaklarında** çalışabilen küçük dil modelleriyle hızla kategorize edilmesi, afet yönetiminde **karar destek mekanizmasına** veri sağlar.
 
@@ -49,12 +49,12 @@
 
 İki kaynaklı **hibrit veri seti** kullanılmıştır:
 
-| Kaynak | Boyut | Açıklama |
-|:-------|------:|:---------|
-| Toraman et al. (2023) "Tweets Under the Rubble" | ~1000 | Manuel etiketli akademik veri |
-| Kaggle "Türkiye Deprem Yardımlaşma" | ~500 | Topluluk veri |
-| `depremGun5` (ham, yeniden etiketlendi) | 47.079 | Bu proje kapsamında **zayıf etiketlenmiş** (regex+bağlam kuralları) |
-| Sentetik (template-based) | 1.663 | Az örnekli sınıflar için (kayıp, altyapı, bağış) |
+| Kaynak                                          |  Boyut | Açıklama                                                            |
+| :---------------------------------------------- | -----: | :------------------------------------------------------------------ |
+| Toraman et al. (2023) "Tweets Under the Rubble" |  ~1000 | Manuel etiketli akademik veri                                       |
+| Kaggle "Türkiye Deprem Yardımlaşma"             |   ~500 | Topluluk veri                                                       |
+| `depremGun5` (ham, yeniden etiketlendi)         | 47.079 | Bu proje kapsamında **zayıf etiketlenmiş** (regex+bağlam kuralları) |
+| Sentetik (template-based)                       |  1.663 | Az örnekli sınıflar için (kayıp, altyapı, bağış)                    |
 
 ### Final Dağılım (12.400 örnek)
 
@@ -86,12 +86,12 @@ Veri hazırlığının detayları için bkz. [`docs/VERI_HAZIRLIGI.md`](docs/VER
 
 ### Modeller
 
-| Model | Parametre | HuggingFace ID |
-|:------|----------:|:---------------|
-| SmolLM2-360M-Instruct | 360M | `HuggingFaceTB/SmolLM2-360M-Instruct` |
-| TinyLlama-1.1B-Chat | 1.1B | `TinyLlama/TinyLlama-1.1B-Chat-v1.0` |
-| Qwen2.5-1.5B-Instruct | 1.5B | `Qwen/Qwen2.5-1.5B-Instruct` |
-| Gemma-2-2B-it | 2.6B | `google/gemma-2-2b-it` |
+| Model                 | Parametre | HuggingFace ID                        |
+| :-------------------- | --------: | :------------------------------------ |
+| SmolLM2-360M-Instruct |      360M | `HuggingFaceTB/SmolLM2-360M-Instruct` |
+| TinyLlama-1.1B-Chat   |      1.1B | `TinyLlama/TinyLlama-1.1B-Chat-v1.0`  |
+| Qwen2.5-1.5B-Instruct |      1.5B | `Qwen/Qwen2.5-1.5B-Instruct`          |
+| Gemma-2-2B-it         |      2.6B | `google/gemma-2-2b-it`                |
 
 ### Hiperparametreler
 
@@ -103,7 +103,7 @@ max_seq_length: 256
 optimizer: paged_adamw_8bit
 lr_scheduler: cosine
 warmup_ratio: 0.05
-seeds: [42, 123, 2023]   # 3 seed → mean ± std
+seeds: [42, 123, 2023] # 3 seed → mean ± std
 ```
 
 ---
@@ -114,27 +114,27 @@ seeds: [42, 123, 2023]   # 3 seed → mean ± std
 
 ### Standart Sonuç Tablosu (placeholder)
 
-| Model | Yöntem | Accuracy | Macro-F1 | Weighted-F1 | Train (s) | Inference (ms) | GPU (GB) |
-|:------|:-------|---------:|---------:|------------:|----------:|---------------:|---------:|
-| SmolLM2-360M | Zero-shot | TBD | TBD | TBD | — | TBD | TBD |
-| SmolLM2-360M | QLoRA | TBD ± TBD | TBD ± TBD | TBD ± TBD | TBD | TBD | TBD |
-| TinyLlama-1.1B | Zero-shot | TBD | TBD | TBD | — | TBD | TBD |
-| TinyLlama-1.1B | QLoRA | TBD ± TBD | TBD ± TBD | TBD ± TBD | TBD | TBD | TBD |
-| Qwen2.5-1.5B | Zero-shot | TBD | TBD | TBD | — | TBD | TBD |
-| Qwen2.5-1.5B | QLoRA | TBD ± TBD | TBD ± TBD | TBD ± TBD | TBD | TBD | TBD |
-| Gemma-2-2B | Zero-shot | TBD | TBD | TBD | — | TBD | TBD |
-| Gemma-2-2B | QLoRA | TBD ± TBD | TBD ± TBD | TBD ± TBD | TBD | TBD | TBD |
+| Model          | Yöntem    |  Accuracy |  Macro-F1 | Weighted-F1 | Train (s) | Inference (ms) | GPU (GB) |
+| :------------- | :-------- | --------: | --------: | ----------: | --------: | -------------: | -------: |
+| SmolLM2-360M   | Zero-shot |       TBD |       TBD |         TBD |         — |            TBD |      TBD |
+| SmolLM2-360M   | QLoRA     | TBD ± TBD | TBD ± TBD |   TBD ± TBD |       TBD |            TBD |      TBD |
+| TinyLlama-1.1B | Zero-shot |       TBD |       TBD |         TBD |         — |            TBD |      TBD |
+| TinyLlama-1.1B | QLoRA     | TBD ± TBD | TBD ± TBD |   TBD ± TBD |       TBD |            TBD |      TBD |
+| Qwen2.5-1.5B   | Zero-shot |       TBD |       TBD |         TBD |         — |            TBD |      TBD |
+| Qwen2.5-1.5B   | QLoRA     | TBD ± TBD | TBD ± TBD |   TBD ± TBD |       TBD |            TBD |      TBD |
+| Gemma-2-2B     | Zero-shot |       TBD |       TBD |         TBD |         — |            TBD |      TBD |
+| Gemma-2-2B     | QLoRA     | TBD ± TBD | TBD ± TBD |   TBD ± TBD |       TBD |            TBD |      TBD |
 
 ### LoRA vs QLoRA Karşılaştırması
 
 Bu çalışmanın benchmark makalesine ana katkısı, Saliha Göçergi'nin LoRA sonuçlarıyla yapılacak doğrudan karşılaştırmadır:
 
-| Boyut | LoRA (Saliha) | QLoRA (bu repo) |
-|:------|:--------------|:----------------|
-| Accuracy (mean) | TBD | TBD |
-| Macro-F1 (mean) | TBD | TBD |
-| Peak GPU bellek | TBD GB | TBD GB |
-| Eğitim süresi | TBD s | TBD s |
+| Boyut           | LoRA (Saliha) | QLoRA (bu repo) |
+| :-------------- | :------------ | :-------------- |
+| Accuracy (mean) | TBD           | TBD             |
+| Macro-F1 (mean) | TBD           | TBD             |
+| Peak GPU bellek | TBD GB        | TBD GB          |
+| Eğitim süresi   | TBD s         | TBD s           |
 
 ---
 
@@ -175,6 +175,7 @@ python src/build_dataset.py
 Notebook olarak: `notebooks/QLoRA_FineTuning.ipynb`
 
 Hücreleri sırayla çalıştır. Çıktılar `outputs/` altına:
+
 - `all_results.json` — tüm koşuların ham sonuçları
 - `summary_per_run.csv` — her koşunun metrikleri
 - `summary_mean_std.csv` — model bazında ortalama±std
@@ -320,4 +321,4 @@ Bu proje **akademik kullanım** içindir. Detaylar için bkz. [LICENSE](LICENSE)
 
 ---
 
-*Son güncelleme: 20 Mayıs 2026*
+_Son güncelleme: 20 Mayıs 2026_
