@@ -1,0 +1,98 @@
+{
+  "model": "TinyLlama-1.1B-Chat-v1.0",
+  "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "parametre": "1.1B",
+  "yontem": "QLoRA (4-bit NF4, fp16)",
+  "seed": 42,
+  "test_size": 80,
+  "accuracy": 0.925,
+  "f1_macro": 0.9082,
+  "f1_weighted": 0.921,
+  "inference_ms": 960.5,
+  "egitim_suresi_s": 1697.0,
+  "peak_gpu_gb": 3.29,
+  "egitilen_param": 4505600,
+  "parse_basarisiz": 0,
+  "confusion_matrix": [
+    [
+      28,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      10,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      10,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      7,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      19
+    ]
+  ],
+  "classification_report": {
+    "Yardım Talebi": {
+      "precision": 0.9333333333333333,
+      "recall": 0.9655172413793104,
+      "f1-score": 0.9491525423728814,
+      "support": 29.0
+    },
+    "Kayıp Bildirimi": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1-score": 0.9523809523809523,
+      "support": 10.0
+    },
+    "Altyapı Hasarı": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1-score": 0.9523809523809523,
+      "support": 10.0
+    },
+    "Bağış/Koordinasyon": {
+      "precision": 0.875,
+      "recall": 0.6363636363636364,
+      "f1-score": 0.7368421052631579,
+      "support": 11.0
+    },
+    "Diğer/İlgisiz": {
+      "precision": 0.95,
+      "recall": 0.95,
+      "f1-score": 0.95,
+      "support": 20.0
+    },
+    "accuracy": 0.925,
+    "macro avg": {
+      "precision": 0.9153030303030303,
+      "recall": 0.9103761755485893,
+      "f1-score": 0.9081513104795886,
+      "support": 80.0
+    },
+    "weighted avg": {
+      "precision": 0.9234185606060606,
+      "recall": 0.925,
+      "f1-score": 0.9209788241790917,
+      "support": 80.0
+    }
+  }
+}

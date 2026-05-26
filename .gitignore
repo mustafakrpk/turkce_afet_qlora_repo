@@ -65,3 +65,8 @@ tensorboard_logs/
 # =====================================================
 Thumbs.db
 Desktop.ini
+
+# Model ağırlıkları (GitHub'a yüklenmez, Drive/HF'te tutulur)
+models/
+*.safetensors
+*.bin

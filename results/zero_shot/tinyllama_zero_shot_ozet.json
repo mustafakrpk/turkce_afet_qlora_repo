@@ -1,0 +1,14 @@
+{
+  "model": "TinyLlama-1.1B-Chat-v1.0",
+  "model_id": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "parametre": "1.1B",
+  "yontem": "zero-shot",
+  "test_size": 80,
+  "gecerli_tahmin": 1,
+  "parse_edilemedi": 79,
+  "accuracy": 0.2625,
+  "f1_macro": 0.0941,
+  "f1_weighted": 0.1252,
+  "inference_ms": 505.1,
+  "model_boyutu_mb": 2200.0
+}
