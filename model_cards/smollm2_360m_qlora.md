@@ -7,7 +7,7 @@
 - **Geliştiren:** Mustafa Kırpık — Selçuk Üniv., BDM Dönem Projesi (2026)
 
 ## Eğitim
-- **Veri:** 793 elle etiketlenmiş tweet (633 eğitim / 80 doğrulama / 80 test), seed=42, stratified
+- **Veri:** Kaggle "Turkey Earthquake Relief Tweets" (Küçüktaş, 2023) havuzundan 793 tweet, elle 5 sınıfa etiketlendi (633 eğitim / 80 doğrulama / 80 test), seed=42, stratified
 - **LoRA:** r=16, α=32, dropout=0.05, hedef: q/k/v/o_proj
 - **Eğitilebilir parametre:** 3.28M (%0.90)
 - **Hiperparametre:** 3 epoch, efektif batch 16, lr 2e-4, cosine, warmup 0.03
