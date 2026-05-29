@@ -1,0 +1,46 @@
+{
+  "model": "SmolLM2-360M-Instruct",
+  "yontem": "Zero-shot",
+  "test_size": 80,
+  "accuracy": 0.4125,
+  "f1_macro": 0.2145,
+  "f1_weighted": 0.3229,
+  "parse_basarisiz": 12,
+  "confusion_matrix": [
+    [
+      26,
+      1,
+      0,
+      0,
+      2
+    ],
+    [
+      6,
+      1,
+      0,
+      0,
+      3
+    ],
+    [
+      6,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      9,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      11,
+      3,
+      0,
+      0,
+      6
+    ]
+  ]
+}
